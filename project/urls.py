@@ -18,10 +18,15 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
+from book.views import author_list_api, author_detail_api
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
+    
+    path('api/list', author_list_api),
+    path('api/list/<int:id>', author_detail_api)
 ]
 
 
